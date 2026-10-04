@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Market Research Survey</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            font-family: "Lucida Grande", "Lucida Sans Unicode", Tahoma, sans-serif;
+            background-color: #f5f5f5;
+            color: #333333;
+            margin: 0;
+            padding: 30px 15px;
+        }
+        .survey-container {
+            max-width: 680px;
+            margin: 0 auto;
+            background: #ffffff;
+            border-top: 10px solid #c24936;
+            padding: 30px 40px;
+            border-radius: 4px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.12);
+        }
+        h1 {
+            font-size: 22px;
+            margin-top: 0;
+            margin-bottom: 6px;
+            color: #222222;
+        }
+        .description {
+            font-size: 13px;
+            color: #666666;
+            margin-bottom: 25px;
+            padding-bottom: 12px;
+            border-bottom: 1px dotted #ccc;
+        }
+        .form-section {
+            margin-bottom: 22px;
+        }
+        .form-section label.field-title {
+            display: block;
+            font-size: 14px;
+            font-weight: bold;
+            margin-bottom: 8px;
+            color: #333333;
+        }
+        .required {
+            color: #e51c23;
+        }
+        select {
+            width: 100%;
+            max-width: 320px;
+            padding: 7px 10px;
+            font-size: 13px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            font-family: inherit;
+            outline: none;
+        }
+        .radio-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .radio-list li {
+            margin-bottom: 8px;
+            font-size: 13px;
+        }
+        .radio-list input[type="radio"] {
+            margin-right: 8px;
+            vertical-align: middle;
+        }
+        .matrix-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 8px;
+            font-size: 13px;
+        }
+        .matrix-table th, .matrix-table td {
+            padding: 10px 8px;
+            text-align: center;
+        }
+        .matrix-table th {
+            color: #555555;
+            font-weight: 600;
+        }
+        .matrix-table th:first-child {
+            text-align: left;
+            width: 35%;
+        }
+        .matrix-table tbody tr:nth-child(odd) {
+            background-color: #f9f9f9;
+        }
+        .matrix-table tbody tr:nth-child(even) {
+            background-color: #ffffff;
+        }
+        .matrix-table tbody td:first-child {
+            text-align: left;
+            font-weight: 500;
+            color: #333333;
+        }
+        .btn-submit {
+            background-color: #c24936;
+            color: #ffffff;
+            border: none;
+            padding: 10px 24px;
+            font-size: 14px;
+            font-weight: bold;
+            border-radius: 3px;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+        }
+        .btn-submit:hover {
+            background-color: #a83d2c;
+        }
+    </style>
+</head>
+<body>
+
+<div class="survey-container">
+    <h1>Market Research Survey</h1>
+    <div class="description">Please take a few moments to complete this satisfaction survey.</div>
+
+    <form action="" method="POST">
+        <!-- Câu 1: Độ tuổi -->
+        <div class="form-section">
+            <label class="field-title" for="age">What is your age range? <span class="required">*</span></label>
+            <select id="age" name="age" required>
+                <option value="" disabled selected>Select an option</option>
+                <option value="18-24">18-24</option>
+                <option value="25-34">25-34</option>
+                <option value="35-50">35-50</option>
+                <option value="50+">50+</option>
+            </select>
+        </div>
+
+        <!-- Câu 2: Thu nhập -->
+        <div class="form-section">
+            <label class="field-title" for="income">What is your yearly household income? <span class="required">*</span></label>
+            <select id="income" name="income" required>
+                <option value="" disabled selected>Select an option</option>
+                <option value="0-25k">$0 - $25,000</option>
+                <option value="25k-50k">$25,001 - $50,000</option>
+                <option value="50k-100k">$50,001 - $100,000</option>
+                <option value="100k+">$100,000+</option>
+            </select>
+        </div>
+
+        <!-- Câu 3: Giới tính -->
+        <div class="form-section">
+            <label class="field-title">Gender Identity <span class="required">*</span></label>
+            <ul class="radio-list">
+                <li><label><input type="radio" name="gender" value="Male" required> Male</label></li>
+                <li><label><input type="radio" name="gender" value="Female"> Female</label></li>
+                <li><label><input type="radio" name="gender" value="Nonbinary"> Nonbinary</label></li>
+                <li><label><input type="radio" name="gender" value="Other"> Other</label></li>
+            </ul>
+        </div>
+
+        <!-- Câu 4: Đánh giá bảng ma trận (Likert scale matrix) -->
+        <div class="form-section">
+            <label class="field-title">How likely are you to: <span class="required">*</span></label>
+            <table class="matrix-table">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>Very Likely</th>
+                        <th>Likely</th>
+                        <th>Neutral</th>
+                        <th>Unlikely</th>
+                        <th>Very Unlikely</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Buy products again</td>
+                        <td><input type="radio" name="buy_again" value="5" required></td>
+                        <td><input type="radio" name="buy_again" value="4"></td>
+                        <td><input type="radio" name="buy_again" value="3"></td>
+                        <td><input type="radio" name="buy_again" value="2"></td>
+                        <td><input type="radio" name="buy_again" value="1"></td>
+                    </tr>
+                    <tr>
+                        <td>Recommend to others</td>
+                        <td><input type="radio" name="recommend" value="5" required></td>
+                        <td><input type="radio" name="recommend" value="4"></td>
+                        <td><input type="radio" name="recommend" value="3"></td>
+                        <td><input type="radio" name="recommend" value="2"></td>
+                        <td><input type="radio" name="recommend" value="1"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Nút Submit -->
+        <div class="form-section" style="margin-top: 30px;">
+            <input type="submit" value="Submit" class="btn-submit">
+        </div>
+    </form>
+</div>
+
+</body>
+</html>
