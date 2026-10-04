@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="utf-8">
+    <title>Lịch họp công ty</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            background-color: #f8f9fa;
+            color: #333;
+        }
+        h1 {
+            color: #1a365d;
+            border-bottom: 2px solid #2b6cb0;
+            padding-bottom: 8px;
+            max-width: 650px;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            max-width: 650px;
+            background-color: #ffffff;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+            border-radius: 6px;
+            overflow: hidden;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid #dee2e6;
+            padding: 12px 16px;
+            text-align: center;
+        }
+        th {
+            background-color: #2b6cb0;
+            color: #ffffff;
+            font-weight: 600;
+        }
+        tr:nth-child(even) {
+            background-color: #f8fafc;
+        }
+        tr:hover {
+            background-color: #edf2f7;
+        }
+        .content-cell {
+            text-align: left;
+        }
+        .date-col {
+            font-weight: bold;
+            background-color: #f1f5f9;
+            width: 140px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Lịch họp công ty</h1>
+
+    <table>
+        <tr>
+            <th>Ngày</th>
+            <th>Giờ</th>
+            <th>Nội dung cuộc họp</th>
+        </tr>
+        <tr>
+            <!-- Dùng rowspan để gộp ngày có 2 cuộc họp -->
+            <td rowspan="2" class="date-col">Thứ Hai (05/10)</td>
+            <td>08:30 - 09:30</td>
+            <td class="content-cell">Họp giao ban đầu tuần phòng Kỹ thuật</td>
+        </tr>
+        <tr>
+            <td>14:00 - 15:30</td>
+            <td class="content-cell">Đánh giá tiến độ dự án Website</td>
+        </tr>
+        <tr>
+            <td class="date-col">Thứ Ba (06/10)</td>
+            <td>09:00 - 11:30</td>
+            <td class="content-cell">Phỏng vấn ứng viên Thực tập sinh</td>
+        </tr>
+        <tr>
+            <td class="date-col">Thứ Tư (07/10)</td>
+            <!-- Dùng colspan gộp cột khi sự kiện kéo dài nhiều giờ -->
+            <td colspan="2" style="font-weight: bold; color: #2b6cb0;">
+                08:00 - 17:00: Hội thảo chuyển đổi số toàn công ty (Cả ngày)
+            </td>
+        </tr>
+        <tr>
+            <!-- Dùng rowspan để gộp ngày tiếp theo có 2 cuộc họp -->
+            <td rowspan="2" class="date-col">Thứ Năm (08/10)</td>
+            <td>10:00 - 11:30</td>
+            <td class="content-cell">Họp định kỳ với đối tác khách hàng</td>
+        </tr>
+        <tr>
+            <td>15:00 - 16:30</td>
+            <td class="content-cell">Đào tạo nội bộ quy trình Git & Scrum</td>
+        </tr>
+    </table>
+
+</body>
+</html>
