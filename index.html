@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="utf-8">
+    <title>Thực hành định kiểu bảng trong CSS</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            background-color: #f7fafc;
+            color: #333333;
+        }
+
+        h1 {
+            color: #1a365d;
+            border-bottom: 2px solid #2b6cb0;
+            padding-bottom: 8px;
+            max-width: 600px;
+        }
+
+        /* 1. Thiết lập bảng: gộp viền đơn và độ rộng */
+        table {
+            width: 100%;
+            max-width: 600px;
+            border-collapse: collapse; /* Bỏ viền kép */
+            background-color: #ffffff;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+            border-radius: 6px;
+            overflow: hidden;
+            margin-top: 20px;
+        }
+
+        /* 2. Đường viền, khoảng đệm (padding) và căn ngang (text-align) */
+        th, td {
+            border: 1px solid #cbd5e0;
+            padding: 12px 16px;
+            text-align: left;
+        }
+
+        /* 3. Chiều cao (height) và màu nền/màu chữ tiêu đề */
+        th {
+            height: 45px;
+            background-color: #2b6cb0;
+            color: #ffffff;
+            font-weight: 600;
+        }
+
+        /* 4. Căn dọc (vertical-align) và màu nền xen kẽ */
+        td {
+            vertical-align: middle;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f8fafc;
+        }
+
+        tr:hover {
+            background-color: #edf2f7;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Danh sách sinh viên lớp Web</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Họ tên</th>
+                <th>Tuổi</th>
+                <th>Lớp</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Nguyễn Văn A</td>
+                <td>20</td>
+                <td>Web</td>
+            </tr>
+            <tr>
+                <td>Trần Thị B</td>
+                <td>21</td>
+                <td>Web</td>
+            </tr>
+            <tr>
+                <td>Lê Văn C</td>
+                <td>22</td>
+                <td>Web</td>
+            </tr>
+        </tbody>
+    </table>
+
+</body>
+</html>
